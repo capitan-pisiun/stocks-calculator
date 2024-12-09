@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="uk">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Калькулятор прибутку</title>
+
+        <style>
+          body {
+            margin: 24px;
+          }
+
+          button {
+            display: flex;
+            padding: 6px;
+          }
+
+          form {
+            flex-direction: column;
+            margin-top: 28px;
+          }
+
+          form > div {
+            gap: 8px;
+          }
+
+          form,
+          div {
+            display: flex;
+          }
+
+          h2 {
+            margin-bottom: 12px;
+          }
+
+          h5 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            margin-top: 0;
+          }
+
+          label,
+          input {
+            display: flex;
+            margin-bottom: 8px;
+            max-width: 165px;
+          }
+
+          #analyze-block {
+            margin-top: 16px;
+          }
+
+          .column-1, .column-2, .column-3, .column-4 {
+            flex-direction: column;
+            padding-left: 8px;
+            padding-right: 8px;
+          }
+        </style>
+    </head>
+
+    <body>
+        <h2>Калькулятор прибутковості акцій</h2>
+        <h5>v1.0.0</h5>
+        <h5>Developed by <a href="https://bsky.app/profile/liskyveaber.bsky.social"
+                            target="_blank">@liskyveaber.bsky.social</a>. All rights not reserved</h5>
+
+        <form id="data-form">
+            <!-- row 1 -->
+            <div class="row">
+                <div class="column-1">
+                    <label for="buyPrice1">Ціна купівлі 1:</label>
+                    <input type="text" id="buyPrice1" name="buyPrice1" placeholder="Ціна купівлі 1">
+                </div>
+                <div class="column-2">
+                    <label for="highestBuyPrice1">Найвища ціна купівлі 1:</label>
+                    <input type="text" id="highestBuyPrice1" name="highestBuyPrice1"
+                           placeholder="Найвища ціна купівлі 1">
+                </div>
+                <div class="column-3">
+                    <label for="sellPrice1">Ціна продажу 1:</label>
+                    <input type="text" id="sellPrice1" name="sellPrice1" placeholder="Ціна продажу 1">
+                </div>
+                <div class="column-4">
+                    <label for="profit1">Прибуток (%) 1:</label>
+                    <input type="text" id="profit1" name="profit1" placeholder="Прибуток (%) 1">
+                </div>
+            </div>
+            <!-- row 2 -->
+            <div class="row">
+                <div class="column-1">
+                    <label for="buyPrice2">Ціна купівлі 2:</label>
+                    <input type="text" id="buyPrice2" name="buyPrice2" placeholder="Ціна купівлі 2">
+                </div>
+                <div class="column-2">
+                    <label for="highestBuyPrice2">Найвища ціна купівлі 2:</label>
+                    <input type="text" id="highestBuyPrice2" name="highestBuyPrice2"
+                           placeholder="Найвища ціна купівлі 2">
+                </div>
+                <div class="column-3">
+                    <label for="sellPrice2">Ціна продажу 2:</label>
+                    <input type="text" id="sellPrice2" name="sellPrice2" placeholder="Ціна продажу 2">
+                </div>
+                <div class="column-4">
+                    <label for="profit2">Прибуток (%) 2:</label>
+                    <input type="text" id="profit2" name="profit2" placeholder="Прибуток (%) 2">
+                </div>
+            </div>
+            <!-- row 3 -->
+            <div class="row">
+                <div class="column-1">
+                    <label for="buyPrice3">Ціна купівлі 3:</label>
+                    <input type="text" id="buyPrice3" name="buyPrice3" placeholder="Ціна купівлі 3">
+                </div>
+                <div class="column-2">
+                    <label for="highestBuyPrice3">Найвища ціна купівлі 3:</label>
+                    <input type="text" id="highestBuyPrice3" name="highestBuyPrice3"
+                           placeholder="Найвища ціна купівлі 3">
+                </div>
+                <div class="column-3">
+                    <label for="sellPrice3">Ціна продажу 3:</label>
+                    <input type="text" id="sellPrice3" name="sellPrice3" placeholder="Ціна продажу 3">
+                </div>
+                <div class="column-4">
+                    <label for="profit3">Прибуток (%) 3:</label>
+                    <input type="text" id="profit3" name="profit3" placeholder="Прибуток (%) 3">
+                </div>
+            </div>
+            <!-- row 4 -->
+            <div class="row">
+                <div class="column-1">
+                    <label for="buyPrice4">Ціна купівлі 4:</label>
+                    <input type="text" id="buyPrice4" name="buyPrice4" placeholder="Ціна купівлі 4">
+                </div>
+                <div class="column-2">
+                    <label for="highestBuyPrice4">Найвища ціна купівлі 4:</label>
+                    <input type="text" id="highestBuyPrice4" name="highestBuyPrice4"
+                           placeholder="Найвища ціна купівлі 4">
+                </div>
+                <div class="column-3">
+                    <label for="sellPrice4">Ціна продажу 4:</label>
+                    <input type="text" id="sellPrice4" name="sellPrice4" placeholder="Ціна продажу 4">
+                </div>
+                <div class="column-4">
+                    <label for="profit4">Прибуток (%) 4:</label>
+                    <input type="text" id="profit4" name="profit4" placeholder="Прибуток (%) 4">
+                </div>
+            </div>
+            <!-- row 5 -->
+            <div class="row">
+                <div class="column-1">
+                    <label for="buyPrice5">Ціна купівлі 5:</label>
+                    <input type="text" id="buyPrice5" name="buyPrice5" placeholder="Ціна купівлі 5">
+                </div>
+                <div class="column-2">
+                    <label for="highestBuyPrice5">Найвища ціна купівлі 5:</label>
+                    <input type="text" id="highestBuyPrice5" name="highestBuyPrice5"
+                           placeholder="Найвища ціна купівлі 5">
+                </div>
+                <div class="column-3">
+                    <label for="sellPrice5">Ціна продажу 5:</label>
+                    <input type="text" id="sellPrice5" name="sellPrice5" placeholder="Ціна продажу 5">
+                </div>
+                <div class="column-4">
+                    <label for="profit5">Прибуток (%) 5:</label>
+                    <input type="text" id="profit5" name="profit5" placeholder="Прибуток (%) 5">
+                </div>
+            </div>
+            <div id="analyze-block">
+                <button type="button" id="analyzeButton" onclick="analyze()">Аналізувати</button>
+            </div>
+        </form>
+
+        <script>
+          function analyze() {
+            for (let i = 1; i <= 5; i++) {
+              const buyPrice = parseFloat(document.getElementById(`buyPrice${i}`).value);
+              const highestBuyPrice = parseFloat(document.getElementById(`highestBuyPrice${i}`).value);
+              const sellPrice = parseFloat(document.getElementById(`sellPrice${i}`).value);
+              const profitInput = document.getElementById(`profit${i}`);
+
+              if (isNaN(buyPrice) || isNaN(highestBuyPrice) || isNaN(sellPrice)) {
+                profitInput.value = '';
+                profitInput.style.backgroundColor = '';
+
+                continue;
+              }
+
+              const profitPercentage = ((sellPrice - buyPrice) / buyPrice) * 100;
+              profitInput.value = profitPercentage.toFixed(2);
+
+              if (buyPrice > highestBuyPrice) {
+                profitInput.style.backgroundColor = 'red';
+              } else {
+                profitInput.style.backgroundColor = 'green';
+              }
+            }
+          }
+        </script>
+    </body>
+</html>
